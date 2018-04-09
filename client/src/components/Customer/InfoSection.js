@@ -1,6 +1,7 @@
 import React from "react";
 
 const InfoSection = props => {
+  //TODO Bug: find out why the value 'annualAccountResult' is not showing properly
   return (
     <div className="info-section">
       <p>
