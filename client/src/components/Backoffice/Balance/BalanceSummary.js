@@ -5,7 +5,6 @@ const BalanceSummary = props => {
   let rows = [];
 
   props.balanceSummary.forEach((item, index) => {
-    console.log(index);
     rows.push(
       <BalanceSumRow
         text={item.text}
