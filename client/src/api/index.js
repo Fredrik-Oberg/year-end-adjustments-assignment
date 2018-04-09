@@ -13,9 +13,9 @@ const requests = {
 };
 
 const Client = {
-  get: id => requests.get(`/client/${id}`)
+  get: id => requests.get(`/customer/${id}`)
 };
 const Backoffice = {
-  post: id => requests.post(`/backoffice/${id}`)
+  post: id => requests.post(`/customer/${id}`)
 };
 export { Client, Backoffice };
