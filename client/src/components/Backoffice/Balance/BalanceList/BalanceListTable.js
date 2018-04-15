@@ -1,15 +1,18 @@
 import React from "react";
 import BalanceListRow from "./BalanceListRow";
 
+const tableStyling = {
+  fontSize: "0.9rem"
+};
 const BalanceListTable = props => {
   let rows = [];
-
   props.balanceList.forEach((item, index) => {
     const key = "row-data-" + item.ktoNr + "-" + item.index;
     rows.push(
       <BalanceListRow
         key={key}
         index={index}
+        rowChangeHandler={props.rowChangeHandler}
         ktoNr={item.ktoNr}
         ktoName={item.ktoName}
         openingFiscal={item.openingFiscal}
@@ -19,8 +22,7 @@ const BalanceListTable = props => {
     );
   });
   return (
-    //TODO Be able to add new rows
-    <div className="balance-list">
+    <div className="balance-list-table" style={tableStyling}>
       <table className="table">
         <thead>
           <tr className="table-dark">

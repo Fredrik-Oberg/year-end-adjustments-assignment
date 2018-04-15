@@ -1,5 +1,6 @@
 import React from "react";
 import helper from "../../../../helpers/balanceHelpers";
+import "./balance.css";
 
 const BalanceListRow = props => {
   const rowChangeKtoNr = ev => {
@@ -62,6 +63,7 @@ const BalanceListRow = props => {
     props.rowChangeHandler(props.index, row);
   };
   return (
+    <tr className="balance-list-table-row">
       <th scope="row">
         <input
           type="number"
