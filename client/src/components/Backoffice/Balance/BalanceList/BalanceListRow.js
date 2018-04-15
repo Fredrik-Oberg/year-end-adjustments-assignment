@@ -1,5 +1,5 @@
 import React from "react";
-import helper from "../../../../helpers/balanceHelpers";
+import helper from "../../../../helpers/balanceListHelpers";
 import "./balance.css";
 
 const BalanceListRow = props => {
