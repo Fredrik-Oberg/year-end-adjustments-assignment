@@ -1,39 +1,38 @@
 import { BALANCE_LIST_UPDATED } from "../constants/actionTypes";
 
 const defaultState = {
-  balanceSummary: [
-    //TODO Add calculated values for all
-    {
+  balanceSummary: {
+    bookedFixedAssets: {
       text: "Bokfört värde på anläggningstillgångar",
       value: 0,
       type: "number"
     },
-    {
-      text: "Varulagersaldo",
-      value: 0,
-      type: "number"
-    },
-    {
-      text: "Aktiekapital",
-      value: 50000,
-      type: "number"
-    },
-    {
+    prelRes: {
       text: "Preliminärt resultat före dispositioner och skatt",
       value: 0,
       type: "number"
     },
-    {
+    varuLagerSaldo: {
+      text: "Varulagersaldo",
+      value: 0,
+      type: "number"
+    },
+    aktieKapital: {
+      text: "Aktiekapital",
+      value: 50000,
+      type: "number"
+    },
+    pfondIngaend: {
       text: "Pfond ingående balans",
       value: 1,
       type: "number"
     },
-    {
+    schablonRanta: {
       text: "Schablonränta på P-fonder för året",
       value: "0.36%",
       type: "text"
     }
-  ],
+  },
   balanceList: [
     {
       ktoNr: "1220",

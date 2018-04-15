@@ -3,13 +3,14 @@ import BalanceSumRow from "./BalanceSumRow";
 
 const BalanceSummaryTable = props => {
   let rows = [];
-  props.balanceSummary.forEach((item, index) => {
+  Object.entries(props.balanceSummary).forEach(function(item, index) {
+    const value = item[1];
     rows.push(
       <BalanceSumRow
         key={"row-data-" + index}
-        text={item.text}
-        value={item.value}
-        type={item.type}
+        text={value.text}
+        value={value.value}
+        type={value.type}
         index={index}
       />
     );

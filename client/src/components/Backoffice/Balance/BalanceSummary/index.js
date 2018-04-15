@@ -1,18 +1,21 @@
 import React from "react";
 import { connect } from "react-redux";
-import { BALANCE_LIST_UPDATED } from "../../../../constants/actionTypes";
+import { store } from "../../../../store";
+import { updateBalanceSummary } from "../../../../actions/balanceSummaryActions";
 import BalanceSumTable from "./BalanceSumTable";
 
 const mapStateToProps = state => ({
   ...state.balance
 });
 
-const mapDispatchToProps = dispatch => ({
-  addDeprInvenAmountChangeHandler: list =>
-    dispatch({ type: BALANCE_LIST_UPDATED, list })
-});
+const mapDispatchToProps = dispatch => ({});
+
+store.dispatch(updateBalanceSummary());
 
 class BalanceSummary extends React.Component {
+  componentWillReceiveProps(nextProps) {
+    store.dispatch(updateBalanceSummary());
+  }
   render() {
     return <BalanceSumTable balanceSummary={this.props.balanceSummary} />;
   }
