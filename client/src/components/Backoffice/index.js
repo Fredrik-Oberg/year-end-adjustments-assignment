@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Header from "../Shared/Header";
 import InfoSection from "./InfoSection";
 import Balance from "./Balance";
+import Footer from "./Footer";
 
 const mapStateToProps = state => ({
   ...state.backoffice,
@@ -22,8 +23,12 @@ class Backoffice extends React.Component {
             <div className="row">
               <div className="col-md-12" />
               <InfoSection />
+              <hr />
+              <h2>TODO settings section </h2>
+              <hr />
 
               <Balance />
+              <Footer />
             </div>
           </div>
         </div>
