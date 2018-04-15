@@ -1,7 +1,7 @@
 import React from "react";
 import BalanceListRow from "./BalanceListRow";
 
-const BalanceList = props => {
+const BalanceListTable = props => {
   let rows = [];
 
   props.balanceList.forEach((item, index) => {
@@ -19,6 +19,7 @@ const BalanceList = props => {
     );
   });
   return (
+    //TODO Be able to add new rows
     <div className="balance-list">
       <table className="table">
         <thead>
@@ -37,4 +38,4 @@ const BalanceList = props => {
     </div>
   );
 };
-export default BalanceList;
+export default BalanceListTable;

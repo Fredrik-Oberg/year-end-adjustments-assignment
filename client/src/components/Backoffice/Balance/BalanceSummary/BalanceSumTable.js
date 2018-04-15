@@ -1,9 +1,8 @@
 import React from "react";
 import BalanceSumRow from "./BalanceSumRow";
 
-const BalanceSummary = props => {
+const BalanceSummaryTable = props => {
   let rows = [];
-
   props.balanceSummary.forEach((item, index) => {
     rows.push(
       <BalanceSumRow
@@ -30,4 +29,4 @@ const BalanceSummary = props => {
     </div>
   );
 };
-export default BalanceSummary;
+export default BalanceSummaryTable;

@@ -20,10 +20,10 @@ class BalanceSection extends React.Component {
             <div className="row">
               <div className="col-md-9">
                 <div className="row">
-                  <BalanceSummary balanceSummary={this.props.balanceSummary} />
+                  <BalanceSummary />
                 </div>
                 <div className="row">
-                  <BalanceList balanceList={this.props.balanceList} />
+                  <BalanceList />
                 </div>
               </div>
             </div>
