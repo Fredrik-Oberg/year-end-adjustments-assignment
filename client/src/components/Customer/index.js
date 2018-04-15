@@ -6,9 +6,15 @@ import InfoSection from "./InfoSection";
 import AppropriationsSection from "./Appropriations/";
 import AnnualReturnSection from "./AnnualReturnSection";
 
-const mapStateToProps = state => ({
-  ...state.customer
-});
+const mapStateToProps = state => {
+  const { headerText } = state.customer;
+  const { annualAccountResult } = state.appropriations;
+
+  return {
+    headerText,
+    annualAccountResult
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
   onLoad: () => dispatch({ type: CUSTOMER_PAGE_LOADED })
