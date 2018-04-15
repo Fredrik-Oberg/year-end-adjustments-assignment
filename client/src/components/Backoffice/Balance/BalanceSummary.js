@@ -10,7 +10,7 @@ const BalanceSummary = props => {
         text={item.text}
         value={item.value}
         type={item.type}
-        id={index}
+        index={index}
       />
     );
   });
