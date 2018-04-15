@@ -8,13 +8,22 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addDeprInvenAmountChangeHandler: list =>
-    dispatch({ type: BALANCE_LIST_UPDATED, list })
+  rowChangeHandler: (index, row) => {
+    dispatch({
+      type: BALANCE_LIST_UPDATED,
+      rowToReplace: { index, row }
+    });
+  }
 });
 
 class BalanceList extends React.Component {
   render() {
-    return <BalanceListTable balanceList={this.props.balanceList} />;
+    return (
+      <BalanceListTable
+        balanceList={this.props.balanceList}
+        rowChangeHandler={this.props.rowChangeHandler}
+      />
+    );
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(BalanceList);

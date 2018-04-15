@@ -2,28 +2,80 @@ import React from "react";
 import helper from "../../../../helpers/balanceHelpers";
 
 const BalanceListRow = props => {
-  const rowChange = ev => {
+  const rowChangeKtoNr = ev => {
     ev.preventDefault();
-    //TODO fire event to trigger change for row.
-
-    // props.rowChange(ev.target.value);
+    rowChange(
+      Object.assign(
+        {},
+        {
+          ktoNr: ev.target.value
+        }
+      )
+    );
+  };
+  const rowChangeKtoName = ev => {
+    ev.preventDefault();
+    rowChange(
+      Object.assign(
+        {},
+        {
+          ktoName: ev.target.value
+        }
+      )
+    );
+  };
+  const rowChangeOpeningFiscal = ev => {
+    ev.preventDefault();
+    rowChange(
+      Object.assign(
+        {},
+        {
+          openingFiscal: ev.target.value
+        }
+      )
+    );
+  };
+  const rowChangeOpeningPeriod = ev => {
+    ev.preventDefault();
+    rowChange(
+      Object.assign({}, props, {
+        openingPeriod: ev.target.value
+      })
+    );
+  };
+  const rowChangeClosingBalance = ev => {
+    ev.preventDefault();
+    rowChange(
+      Object.assign({}, props, {
+        closingBalance: ev.target.value
+      })
+    );
+  };
+  const rowChange = newProps => {
+    let row = {
+      ktoNr: newProps.ktoNr,
+      ktoName: newProps.ktoName,
+      openingFiscal: newProps.openingFiscal,
+      openingPeriod: newProps.openingPeriod,
+      closingBalance: newProps.closingBalance
+    };
+    props.rowChangeHandler(props.index, row);
   };
   return (
-    <tr>
       <th scope="row">
         <input
           type="number"
           className="form-control"
           value={props.ktoNr}
-          onChange={rowChange}
+          onChange={rowChangeKtoNr}
         />
       </th>
       <td>
         <input
-          type="number"
+          type="text"
           className="form-control"
           value={props.ktoName}
-          onChange={rowChange}
+          onChange={rowChangeKtoName}
         />
       </td>
       <td>
@@ -31,7 +83,7 @@ const BalanceListRow = props => {
           type="number"
           className="form-control"
           value={props.openingFiscal}
-          onChange={rowChange}
+          onChange={rowChangeOpeningFiscal}
         />
       </td>
       <td>
@@ -39,7 +91,7 @@ const BalanceListRow = props => {
           type="number"
           className="form-control"
           value={props.openingPeriod}
-          onChange={rowChange}
+          onChange={rowChangeOpeningPeriod}
         />
       </td>
       <td>
@@ -47,7 +99,7 @@ const BalanceListRow = props => {
           type="number"
           className="form-control"
           value={props.closingBalance}
-          onChange={rowChange}
+          onChange={rowChangeClosingBalance}
         />
       </td>
       <td>

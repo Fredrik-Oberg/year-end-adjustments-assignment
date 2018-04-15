@@ -62,7 +62,14 @@ const defaultState = {
 export default (state = defaultState, action) => {
   switch (action.type) {
     case BALANCE_LIST_UPDATED:
-      return action.balanceList;
+      state.balanceList[action.rowToReplace.index] = action.rowToReplace.row;
+      return {
+        ...state,
+        balanceList: state.balanceList.map(
+          (row, i) =>
+            i === action.rowToReplace.index ? action.rowToReplace.row : row
+        )
+      };
     default:
       return state;
   }
