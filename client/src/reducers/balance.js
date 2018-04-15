@@ -1,9 +1,11 @@
+import { BALANCE_LIST_UPDATED } from "../constants/actionTypes";
+
 const defaultState = {
   balanceSummary: [
     //TODO Add calculated values for all
     {
       text: "Bokfört värde på anläggningstillgångar",
-      value: 44385,
+      value: 0,
       type: "number"
     },
     {
@@ -59,6 +61,8 @@ const defaultState = {
 
 export default (state = defaultState, action) => {
   switch (action.type) {
+    case BALANCE_LIST_UPDATED:
+      return action.balanceList;
     default:
       return state;
   }
