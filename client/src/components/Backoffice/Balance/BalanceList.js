@@ -1,39 +1,36 @@
 import React from "react";
-import { NumberFormatter as formatter } from "../../../helpers/numberFormatter";
+import BalanceListRow from "./BalanceListRow";
 
 const BalanceList = props => {
-  const addDeprInvenAmountChange = ev => {
-    //TODO Add validation
-    ev.preventDefault();
-    props.addDeprInvenAmountChangeHandler(ev.target.value);
-  };
+  let rows = [];
 
+  props.balanceList.forEach((item, index) => {
+    rows.push(
+      <BalanceListRow
+        index={index}
+        ktoNr={item.ktoNr}
+        ktoName={item.ktoName}
+        openingFiscal={item.openingFiscal}
+        openingPeriod={item.openingPeriod}
+        closingBalance={item.closingBalance}
+      />
+    );
+  });
   return (
     <div className="balance-list">
       <table className="table">
         <thead>
-          <tr className="table-light">
-            <th scope="col" />
-            <th scope="col">Max. minskning av resultat</th>
-            <th scope="col">Max. ökning av resultat</th>
-            <th scope="col">Valt Belopp</th>
+          <tr className="table-dark">
+            <th scope="col">KtoNr </th>
+            <th scope="col">KtoNamn</th>
+            <th scope="col">Opening fiscal</th>
+            <th scope="col">opening period</th>
+            <th scope="col">Closing Balance</th>
+            <th scope="col">Ej Avdragsgill</th>
+            <th scope="col">Skattefri intäkt</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <th scope="row">Överavskrivning på inventarier</th>
-            <td> {formatter(props.addDeprInven)} </td>
-            <td className="bg-secondary" />
-            <td className="bg-info">
-              <input
-                type="number"
-                className="form-control"
-                value={props.addDeprInvenAmount}
-                onChange={addDeprInvenAmountChange}
-              />
-            </td>
-          </tr>
-        </tbody>
+        <tbody>{rows}</tbody>
       </table>
     </div>
   );

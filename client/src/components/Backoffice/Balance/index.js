@@ -23,7 +23,7 @@ class BalanceSection extends React.Component {
                   <BalanceSummary balanceSummary={this.props.balanceSummary} />
                 </div>
                 <div className="row">
-                  <BalanceList />
+                  <BalanceList balanceList={this.props.balanceList} />
                 </div>
               </div>
             </div>

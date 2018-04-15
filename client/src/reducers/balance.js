@@ -31,6 +31,29 @@ const defaultState = {
       value: "0.36%",
       type: "text"
     }
+  ],
+  balanceList: [
+    {
+      ktoNr: "1220",
+      ktoName: "Inventarier och verktyg",
+      openingFiscal: 0,
+      openingPeriod: 0,
+      closingBalance: 56867.2
+    },
+    {
+      ktoNr: "6072",
+      ktoName: "Representation, ej avdragsgill",
+      openingFiscal: 0,
+      openingPeriod: 0,
+      closingBalance: 5206.4
+    },
+    {
+      ktoNr: "8314",
+      ktoName: "Något avdragsgillt",
+      openingFiscal: 0,
+      openingPeriod: 0,
+      closingBalance: 5000
+    }
   ]
 };
 
