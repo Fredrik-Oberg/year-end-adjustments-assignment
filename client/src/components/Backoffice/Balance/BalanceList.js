@@ -5,8 +5,10 @@ const BalanceList = props => {
   let rows = [];
 
   props.balanceList.forEach((item, index) => {
+    const key = "row-data-" + item.ktoNr + "-" + item.index;
     rows.push(
       <BalanceListRow
+        key={key}
         index={index}
         ktoNr={item.ktoNr}
         ktoName={item.ktoName}

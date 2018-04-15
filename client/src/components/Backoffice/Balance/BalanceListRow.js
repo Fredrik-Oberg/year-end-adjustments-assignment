@@ -2,10 +2,9 @@ import React from "react";
 import helper from "../../../helpers/balanceHelpers";
 
 const BalanceListRow = props => {
-  const key = "row-data-" + props.ktoNr + "-" + props.index;
-
   return (
-    <tr key={key}>
+    //TODO td should be editable
+    <tr>
       <th scope="row">{props.ktoNr} </th>
       <td> {props.ktoName}</td>
       <td> {props.openingFiscal}</td>

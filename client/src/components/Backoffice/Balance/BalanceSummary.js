@@ -7,6 +7,7 @@ const BalanceSummary = props => {
   props.balanceSummary.forEach((item, index) => {
     rows.push(
       <BalanceSumRow
+        key={"row-data-" + index}
         text={item.text}
         value={item.value}
         type={item.type}
